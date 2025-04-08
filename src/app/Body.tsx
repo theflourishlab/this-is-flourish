@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -10,14 +10,8 @@ const projects = [
     title: "MyUni",
     description:
       "A university-matching app helping students in Nigeria discover their best-fit universities based on personal preferences.",
-    link: "https://myuni.ng",
-  },
-  {
-    title: "MyUni Friends (Backend)",
-    description:
-      "Consultation feature connecting prospective students with current students. Built in FastAPI.",
-    link: "https://github.com/flourishdev/myuni-friends",
-  },
+    link: "https://my-uni-rho.vercel.app/",
+  }
 ];
 
 const series = [
@@ -25,11 +19,18 @@ const series = [
     title: "Practicing Backend Development",
     description:
       "A LinkedIn series where I document my journey learning backend development through real-world projects like MyUni Friends using FastAPI.",
-    link: "https://www.linkedin.com/in/flourishdev",
+    link: "https://www.linkedin.com/in/flourish-olukotun-05aa92202/",
   },
+  {
+    title: "Building a Startup Series",
+    description:
+      "A behind-the-scenes Instagram series where I document the journey of building my startup from scratch — from validating ideas to launching real features. I share lessons learned, challenges faced, and the realities of turning a tech vision into a product that solves real-world problems.",
+    link: "https://www.instagram.com/flourishthedev.logs/",
+  }
 ];
 
 const Body = () => {
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white px-4 py-10 font-sans">
       <div className="max-w-4xl mx-auto space-y-10">
@@ -47,7 +48,7 @@ const Body = () => {
             I build solutions that help students make better academic decisions, document my journey learning backend development, and explore the intersection of technology, education, and business.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <a href="mailto:flourish@example.com">
+            <a href="mailto: flourisholukotun@gmail.com" target="_blank">
               <Button className="bg-gradient-to-r from-white to-gray-400 text-black hover:scale-105 transition">
                 <Mail className="mr-2 h-4 w-4" /> Contact Me
               </Button>
@@ -57,7 +58,7 @@ const Body = () => {
                 <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
               </Button>
             </a>
-            <a href="https://github.com/flourishdev" target="_blank">
+            <a href="https://github.com/f-olukotun" target="_blank">
               <Button className="bg-gradient-to-r from-white to-gray-400 text-black hover:scale-105 transition">
                 <Github className="mr-2 h-4 w-4" /> GitHub
               </Button>
@@ -114,7 +115,9 @@ const Body = () => {
                       target="_blank"
                       className="inline-block text-sm font-medium bg-gradient-to-r from-white to-gray-400 text-black px-4 py-2 rounded-md hover:scale-105 transition"
                     >
-                      View on LinkedIn
+                      {item.title === "Building a Startup Series"
+                        ? "View on Instagram"
+                        : "View on LinkedIn"}
                     </a>
                   </CardContent>
                 </Card>
