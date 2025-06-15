@@ -58,7 +58,7 @@ const Body = () => {
                 <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
               </Button>
             </a>
-            <a href="https://github.com/f-olukotun" target="_blank">
+            <a href="https://github.com/theflourishlab" target="_blank">
               <Button className="bg-gradient-to-r from-white to-gray-400 text-black hover:scale-105 transition">
                 <Github className="mr-2 h-4 w-4" /> GitHub
               </Button>
